@@ -1,0 +1,133 @@
+.about-split {
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  gap: 44px;
+  align-items: start;
+}
+
+.feature-band {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--color-border);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.feature-band__item {
+  display: grid;
+  gap: 10px;
+  padding: 26px;
+  background: var(--color-white);
+}
+
+.feature-band__item strong {
+  color: var(--color-dark);
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  text-transform: uppercase;
+}
+
+.service-detail {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 28px;
+  align-items: center;
+  padding: 28px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+}
+
+.service-detail img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+}
+
+.steps {
+  counter-reset: steps;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  list-style: none;
+}
+
+.steps li {
+  position: relative;
+  display: grid;
+  gap: 10px;
+  min-height: 100%;
+  padding: 26px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+}
+
+.steps li::before {
+  counter-increment: steps;
+  content: counter(steps);
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-weight: 900;
+}
+
+.two-column-list {
+  columns: 2;
+  column-gap: 38px;
+  list-style: none;
+}
+
+.two-column-list li {
+  break-inside: avoid;
+  position: relative;
+  margin-bottom: 12px;
+  padding-left: 28px;
+}
+
+.two-column-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--color-primary);
+  font-weight: 900;
+}
+
+.review-placeholder {
+  padding: 32px;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  color: var(--color-muted);
+}
+
+.section-cta {
+  margin-top: 28px;
+}
+
+.legal-content {
+  display: grid;
+  gap: 22px;
+  max-width: 860px;
+}
+
+.legal-content h2 {
+  margin-top: 10px;
+  font-size: clamp(1.35rem, 3vw, 2rem);
+}
+
+.simple-page {
+  min-height: 62vh;
+  display: grid;
+  align-items: center;
+  padding: 76px 0;
+}

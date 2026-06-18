@@ -1,0 +1,300 @@
+@media (max-width: 1080px) {
+  .site-nav {
+    gap: 12px;
+  }
+
+  .site-nav__link {
+    padding-inline: 8px;
+  }
+
+  .grid--3,
+  .gallery,
+  .steps,
+  .contact-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .site-footer__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 880px) {
+  .topbar__group:first-child span {
+    display: none;
+  }
+
+  .site-header__inner {
+    min-height: 70px;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+  }
+
+  .site-nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    display: grid;
+    gap: 18px;
+    padding: 20px 16px 24px;
+    background: var(--color-dark);
+    box-shadow: var(--shadow-header);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 180ms ease, transform 180ms ease;
+  }
+
+  .site-nav.is-open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .site-nav__list {
+    display: grid;
+    gap: 2px;
+  }
+
+  .site-nav__link {
+    color: var(--color-white);
+  }
+
+  .site-nav .btn {
+    width: 100%;
+  }
+
+  .hero {
+    min-height: 660px;
+  }
+
+  .hero::before {
+    background:
+      linear-gradient(90deg, rgba(30, 39, 47, 0.92), rgba(41, 61, 74, 0.76)),
+      linear-gradient(0deg, rgba(44, 51, 58, 0.84), rgba(44, 51, 58, 0));
+  }
+
+  .hero__content {
+    max-width: 760px;
+  }
+
+  .hero--poster {
+    min-height: 600px;
+  }
+
+  .hero--poster::before {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(30, 39, 47, 0.72) 0%,
+        rgba(41, 61, 74, 0.5) 62%,
+        rgba(65, 111, 139, 0.16) 100%
+      ),
+      linear-gradient(
+        0deg,
+        rgba(44, 51, 58, 0.68) 0%,
+        rgba(44, 51, 58, 0.12) 72%
+      );
+  }
+
+  .hero--poster .hero__content {
+    min-height: 600px;
+    max-width: none;
+  }
+
+  .hero__poster-head {
+    gap: 12px;
+  }
+
+  .hero__phones {
+    justify-content: start;
+  }
+
+  .hero__poster-contact {
+    max-width: 620px;
+  }
+
+  .brand-strip__inner {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .grid--2,
+  .media-block,
+  .about-split,
+  .feature-band,
+  .service-detail {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-row {
+    grid-template-columns: 1fr;
+  }
+
+  .top-link {
+    bottom: 26px;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    width: min(calc(100% - 24px), var(--container-width));
+  }
+
+  .section {
+    padding: 58px 0;
+  }
+
+  .topbar__inner {
+    justify-content: center;
+  }
+
+  .topbar__group:first-child,
+  .topbar__group [data-config="schedule"],
+  .topbar__group [data-viber-link] {
+    display: none;
+  }
+
+  .logo {
+    font-size: 0.98rem;
+  }
+
+  .logo__mark {
+    width: 38px;
+    height: 38px;
+  }
+
+  .hero {
+    min-height: 680px;
+  }
+
+  .hero__content {
+    gap: 18px;
+    padding: 58px 0;
+  }
+
+  .hero__actions,
+  .cta-row {
+    display: grid;
+  }
+
+  .hero--poster {
+    min-height: clamp(500px, 70svh, 530px);
+  }
+
+  .hero--poster::before {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(30, 39, 47, 0.78) 0%,
+        rgba(41, 61, 74, 0.56) 100%
+      ),
+      linear-gradient(
+        0deg,
+        rgba(44, 51, 58, 0.72) 0%,
+        rgba(44, 51, 58, 0.18) 72%
+      );
+  }
+
+  .hero--poster .hero__content {
+    min-height: clamp(500px, 70svh, 530px);
+    padding: 34px 0 20px;
+  }
+
+  .hero--poster .hero__image {
+    height: calc(100% + 28px);
+    transform: translateY(-18px);
+  }
+
+  .hero__poster-contact {
+    gap: 14px;
+    margin-top: clamp(112px, 30vw, 154px);
+    max-width: none;
+    width: 100%;
+  }
+
+  .hero__phones {
+    display: grid;
+    gap: 8px;
+  }
+
+  .hero--poster .hero__actions {
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .grid--3,
+  .gallery,
+  .steps,
+  .check-list,
+  .contact-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .brand-strip__inner {
+    display: flex;
+    gap: 12px;
+    margin-inline: -12px;
+    padding-inline: 12px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-padding-inline: 12px;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .brand-strip__item {
+    flex: 0 0 min(64vw, 240px);
+    min-height: 126px;
+    padding: 14px 18px;
+    scroll-snap-align: start;
+  }
+
+  .brand-strip__item img {
+    height: 82px;
+  }
+
+  .brand-strip__item[aria-label="MAN"] img,
+  .brand-strip__item[aria-label="Volvo"] img,
+  .brand-strip__item[aria-label="Scania"] img {
+    height: 94px;
+  }
+
+  .brand-strip {
+    padding: 16px 0 28px;
+  }
+
+  .two-column-list {
+    columns: 1;
+  }
+
+  .contacts-panel,
+  .card,
+  .service-detail,
+  .feature-band__item {
+    padding: 20px;
+  }
+
+  .site-footer__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer__bottom {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .lightbox {
+    padding: 12px;
+  }
+
+  .lightbox__button {
+    width: 44px;
+    height: 44px;
+  }
+}

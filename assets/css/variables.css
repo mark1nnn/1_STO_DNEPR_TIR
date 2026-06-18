@@ -1,0 +1,28 @@
+:root {
+  --color-primary: #78b9df;
+  --color-primary-hover: #5aa3cf;
+  --color-primary-dark: #5aa3cf;
+  --color-primary-soft: #e8f4fb;
+  --color-primary-pale: #f3f9fd;
+  --color-dark: #2c333a;
+  --color-dark-soft: #414a53;
+  --color-black: #1e272f;
+  --color-text: #3c444c;
+  --color-muted: #707a84;
+  --color-white: #ffffff;
+  --color-light: #f4f6f8;
+  --color-surface: #eef2f5;
+  --color-border: #d7dfe5;
+  --color-focus: #2f7fae;
+  --color-shadow: rgba(44, 51, 58, 0.12);
+  --color-success: #217a45;
+  --color-error: #b3261e;
+  --container-width: 1200px;
+  --font-heading: "Roboto Condensed", "Arial Narrow", Arial, sans-serif;
+  --font-body: Inter, Roboto, "Segoe UI", Arial, sans-serif;
+  --shadow-soft: 0 10px 28px var(--color-shadow);
+  --shadow-header: 0 8px 20px rgba(44, 51, 58, 0.1);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --header-height: 78px;
+}
