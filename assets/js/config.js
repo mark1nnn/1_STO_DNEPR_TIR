@@ -13,6 +13,6 @@ export const businessConfig = {
   ],
   schedule: "Пн–Сб: 09:00–18:00",
   viberUrl: "viber://chat?number=%2B380634098903",
-  instagramUrl: "",
+  instagramUrl: "https://www.instagram.com/tiriuzik?igsh=MTF5NTU0MGwyM3h6bw%3D%3D&utm_source=qr",
   googleMapsUrl: ""
 };
