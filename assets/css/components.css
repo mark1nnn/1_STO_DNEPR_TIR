@@ -38,6 +38,17 @@
   color: var(--color-dark);
 }
 
+.btn--viber {
+  border-color: #7360f2;
+  background: #7360f2;
+  color: var(--color-white);
+}
+
+.btn--viber:hover {
+  border-color: #5d4bd8;
+  background: #5d4bd8;
+}
+
 .section--dark .btn--ghost,
 .hero .btn--ghost {
   color: var(--color-white);
@@ -96,38 +107,24 @@
   min-height: var(--header-height);
 }
 
-.logo {
+.site-logo {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  color: var(--color-dark);
-  font-family: var(--font-heading);
-  font-size: 1.18rem;
-  font-weight: 900;
-  line-height: 1.05;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
-.logo__mark {
-  display: grid;
-  place-items: center;
   flex: 0 0 auto;
-  width: 42px;
-  height: 42px;
-  border-radius: var(--radius-sm);
-  background: var(--color-primary);
-  color: var(--color-dark);
 }
 
-.logo small {
+.site-logo__image {
   display: block;
-  color: var(--color-muted);
-  font-family: var(--font-body);
-  font-size: 0.72rem;
-  font-weight: 700;
-  line-height: 1.2;
-  text-transform: none;
+  width: auto;
+  height: clamp(68px, 5.8vw, 92px);
+  max-width: 230px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(30, 39, 47, 0.08));
+  transition: height 180ms ease;
+}
+
+.site-header.is-scrolled .site-logo__image {
+  height: clamp(60px, 5vw, 78px);
 }
 
 .site-nav {
@@ -421,8 +418,8 @@
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
 }
 
 .gallery__button {
@@ -431,18 +428,69 @@
   padding: 0;
   border: 0;
   border-radius: var(--radius-md);
-  background: var(--color-dark);
+  aspect-ratio: 3 / 4;
+  background: var(--color-surface);
+  cursor: pointer;
 }
 
-.gallery__button img {
+.gallery__button img,
+.gallery__button video {
+  display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: 100%;
   object-fit: cover;
-  transition: transform 180ms ease;
+  transition: transform 220ms ease, opacity 220ms ease;
 }
 
-.gallery__button:hover img {
-  transform: scale(1.03);
+.gallery__button:hover img,
+.gallery__button:hover video {
+  transform: scale(1.025);
+}
+
+.gallery__button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(44, 51, 58, 0);
+  transition: background 220ms ease;
+  pointer-events: none;
+}
+
+.gallery__button:hover::after {
+  background: rgba(44, 51, 58, 0.12);
+}
+
+.gallery__button--wide {
+  aspect-ratio: 4 / 3;
+}
+
+.gallery__button--tall {
+  aspect-ratio: 9 / 16;
+}
+
+.gallery__play {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  z-index: 1;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.gallery__play::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 52%;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 15px solid var(--color-dark);
+  transform: translate(-50%, -50%);
 }
 
 .lightbox {
@@ -460,10 +508,14 @@
   display: flex;
 }
 
-.lightbox img {
+.lightbox img,
+.lightbox video {
+  max-width: min(94vw, 1280px);
   max-height: 82vh;
   width: auto;
+  height: auto;
   border-radius: var(--radius-sm);
+  object-fit: contain;
 }
 
 .lightbox__button {
@@ -558,6 +610,102 @@
   background: var(--color-white);
 }
 
+.contacts-panel--compact {
+  gap: 22px;
+}
+
+.contacts-panel__main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 22px;
+  align-items: center;
+}
+
+.contacts-panel__main h2 {
+  max-width: 620px;
+}
+
+.contacts-panel__details {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px 22px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-border);
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.contact-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 44px;
+  padding: 8px 12px 8px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-white);
+  color: var(--color-dark);
+  font-family: var(--font-heading);
+  font-size: 0.94rem;
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.contact-action:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 8px 18px rgba(44, 51, 58, 0.1);
+  transform: translateY(-1px);
+}
+
+.contact-action__icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--color-dark);
+}
+
+.contact-action__icon svg,
+.mobile-actions__icon svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.contact-action--viber .contact-action__icon {
+  background: #7360f2;
+  color: var(--color-white);
+}
+
+.contact-action--instagram .contact-action__icon {
+  background: linear-gradient(135deg, #f58529 0%, #dd2a7b 48%, #8134af 100%);
+  color: var(--color-white);
+}
+
+.contact-action--map .contact-action__icon {
+  background: var(--color-dark);
+  color: var(--color-white);
+}
+
+.contact-action[hidden] {
+  display: none;
+}
+
 .contact-card-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -632,16 +780,16 @@
 
 .page-hero {
   padding: 64px 0;
-  background: linear-gradient(135deg, rgba(32, 33, 36, 0.94), rgba(32, 33, 36, 0.74)), url("../images/trailer-service-yard.png") center / cover;
+  background: linear-gradient(135deg, var(--color-black), var(--color-dark-soft));
   color: var(--color-white);
 }
 
 .page-hero--roadside {
-  background-image: linear-gradient(135deg, rgba(32, 33, 36, 0.94), rgba(32, 33, 36, 0.68)), url("../images/roadside-assistance.png");
+  background: linear-gradient(135deg, var(--color-black), var(--color-dark-soft));
 }
 
 .page-hero--daf {
-  background-image: linear-gradient(135deg, rgba(32, 33, 36, 0.94), rgba(32, 33, 36, 0.7)), url("../images/daf-parts.png");
+  background: linear-gradient(135deg, var(--color-black), var(--color-dark-soft));
 }
 
 .page-hero h1,
@@ -657,14 +805,34 @@
 
 .site-footer__grid {
   display: grid;
-  grid-template-columns: 1.2fr 0.7fr 0.9fr 1fr;
+  grid-template-columns: minmax(0, 1.15fr) minmax(160px, 0.8fr) minmax(220px, 1fr);
   gap: 28px;
+  align-items: start;
+}
+
+.site-footer .stack {
+  align-content: start;
 }
 
 .site-footer h2,
-.site-footer h3,
-.site-footer .logo {
+.site-footer h3 {
   color: var(--color-white);
+}
+
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-self: start;
+  width: fit-content;
+}
+
+.footer-logo__image {
+  display: block;
+  width: auto;
+  height: 92px;
+  max-width: 230px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.16));
 }
 
 .site-footer a {
@@ -679,6 +847,10 @@
   display: grid;
   gap: 9px;
   list-style: none;
+}
+
+.footer-list li {
+  min-height: 1.5em;
 }
 
 .site-footer__bottom {
@@ -710,13 +882,26 @@
 
 .mobile-actions a {
   display: inline-flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 46px;
+  gap: 4px;
+  min-height: 56px;
   color: var(--color-white);
   font-family: var(--font-heading);
+  font-size: 0.75rem;
   font-weight: 900;
+  line-height: 1;
   text-transform: uppercase;
+}
+
+.mobile-actions__icon {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .hero--poster {
@@ -835,4 +1020,19 @@
 
 .mobile-actions a:first-child {
   color: var(--color-primary);
+}
+
+.mobile-actions a:first-child .mobile-actions__icon {
+  background: var(--color-primary);
+  color: var(--color-dark);
+}
+
+.mobile-actions a:nth-child(2) .mobile-actions__icon {
+  background: #7360f2;
+  color: var(--color-white);
+}
+
+.mobile-actions a:nth-child(3) .mobile-actions__icon {
+  background: linear-gradient(135deg, #f58529 0%, #dd2a7b 48%, #8134af 100%);
+  color: var(--color-white);
 }
