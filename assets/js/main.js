@@ -52,8 +52,8 @@ function applyConfig() {
   document.querySelectorAll("[data-instagram-link]").forEach((element) => {
     const optionalWrapper = element.closest("[data-optional-instagram]");
     if (!hasInstagram) {
-      element.hidden = false;
-      if (optionalWrapper) optionalWrapper.hidden = false;
+      element.hidden = true;
+      if (optionalWrapper) optionalWrapper.hidden = true;
       element.setAttribute("href", "#");
       return;
     }
