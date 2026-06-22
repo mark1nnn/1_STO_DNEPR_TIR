@@ -1,8 +1,10 @@
 {
   "name": "1 СТО Дніпро TIR",
   "short_name": "Дніпро TIR",
+  "description": "Вантажне СТО у Дніпрі: ремонт вантажівок, тягачів, причепів і виїзна технічна допомога.",
   "lang": "uk",
-  "start_url": "index.html",
+  "start_url": "/",
+  "scope": "/",
   "display": "browser",
   "background_color": "#ffffff",
   "theme_color": "#78b9df",

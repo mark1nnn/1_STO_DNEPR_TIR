@@ -863,6 +863,24 @@
   border-top: 1px solid rgba(255, 255, 255, 0.14);
 }
 
+.site-footer__credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.site-footer__credit span {
+  color: rgba(255, 255, 255, 0.66);
+}
+
+.site-footer__credit-logo {
+  display: block;
+  width: 92px;
+  height: auto;
+  object-fit: contain;
+}
+
 .mobile-actions {
   position: fixed;
   left: 0;

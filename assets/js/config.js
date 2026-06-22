@@ -1,4 +1,5 @@
 export const businessConfig = {
+  siteUrl: "https://1stodniprotir.com.ua",
   name: "1 СТО Дніпро TIR",
   address: "вул. Верстова, 33, Дніпро",
   phones: [
